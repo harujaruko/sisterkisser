@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="assets/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sisterkisser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body onload="lastfm();">
+    <div class="container">  
+      <div class="txcenter">
+        <div id="rndimg"></div>
+        <h1>HARUJARUKO WEBSITE</h1>
+        <h3>COMPUTER GANGSTER GOD</h3>
+        <img src="assets/tumblr_c43f9b460fd20ff2bb36910d344e11dc_ebb0338e_250.webp" alt="">
+        <br><img src="assets/queercodedstamp.webp" alt="">
+      </div>
+      <hr>
+      <div class="socialsContainer">
+        
+        <a data-tilt href="https://www.roblox.com/users/45951016/profile" target="_blank" class="robloxBox socialButton">
+          <img src="./assets/roboxFLAT.svg" alt="" class="imgIcon"> tigrig
+        </a>
+        <a data-tilt href="https://anilist.co/user/dfaltium/" class="anilistBox socialButton" target="_blank">
+          <img src="assets/anilist.svg" class="imgIcon"> dfaltium
+        </a>
+        <a data-tilt href="https://steamcommunity.com/id/harujaruko/" target="_blank" class="steamBox socialButton">
+          <img src="assets/steamBox.png" class="imgIcon"> harujaruko
+        </a>
+        <a data-tilt class="lastfmBox socialButton" href="https://www.last.fm/user/dfaltium" target="_blank">
+          <i class="fab fa-lastfm"></i> dfaltium
+        </a>
+
+        <!-- lastfm box, add buttons above me :D -->
+        <div id="lastfm">
+          <!-- dummy html that'll be replaced, just makes the loading of it less jarring -->
+          <div class="lastfm__box">
+              <img src="./assets/missing.webp" class="lastfm__art" alt="a light blue question mark centered on a dark blue background" title="a light blue question mark centered on a dark blue background"/>
+              <div class="lastfm__info">
+                  <h2 class="lastfm__track ub wht">...</h2>
+                  <p class="lastfm__artist ub">...</p>
+                  <p class="lastfm__album ub">...</p>
+              </div>
+          </div>
+        </div>
+        <!-- end of lastfm box, add more stuff below me :D -->
+        <p class="fontSize1 txcenter">discord: harujaruko<br>
+          soulseek: harujaruko
+        </p>
+      </div>
+      <hr>
+      <p class="fontSize1 txcenter">buttons</p>
+      <div class="buttonsContainer">
+        <img src="assets/sisterkisserorg.webp" title="">
+     
+        
+          <img src="assets/remiliapowerstamp.webp" alt="">
+          <img src="assets/flandrestamp.webp" alt="">
+          <img src="assets/chenstamp.webp" alt="">
+          <a href="https://getpaint.net/" target="_blank">
+            <img src="assets/paintnet.gif" alt="">
+            </a>
+          <iframe src="//incr.easrng.net/badge?key=changeme" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+        </a>
+        
+      </div>
+      <hr>
+      <div class="buttonsContainer">
+        <img src="assets/goreshitdancefloormutha.webp" alt="">
+        <img src="assets/tumblr_85684fc97993b549bf95902862a97cbe_d9e6be97_100.webp" alt="">
+        <img src="assets/mlfawbutton.webp" alt="">
+        <img src="assets/goreshitcirnobutton.webp" alt="">
+        <img src="assets/konajumpstamp.gif" alt="">
+        <img src="assets/badaplestamp.webp" alt="">
+        <img src="assets/toomuchhetstamp.webp" alt="">
+        <img src="assets/luckystarstamp.webp" alt="">
+        <img src="assets/tetomesmestamp.webp" alt="">
+        <img src="assets/madohomustamp.webp" alt="">
+        <img src="assets/lainstamp.webp" alt="">
+        <img src="assets/remiliastamp.gif" alt="">
+        <img src="assets/tetostamp2.gif" alt="">
+        <img src="assets/himejoshistamp.png" alt="">
+        <img src="assets/sealofapprovalstamp.png" alt="">
+        <img src="assets/lesbianstamp.gif" alt="">
+        <img src="assets/yumestamp.png" alt="">
+        <img src="assets/hogstamp.png" alt="">
+      </div>
+    </div>
+    <!-- scripts -->
+    <script>
+      function escapeHTML(string) {
+          return String(string).replace(/[&<>"']/g, function (s) {
+              return {
+                  '&': '&amp;',
+                  '<': '&lt;',
+                  '>': '&gt;',
+                  '"': '&quot;',
+                  "'": '&#39;'
+              }[s];
+          });
+      }
+      async function lastfm() {
+          try{
+              const res = await fetch('https://lastfm-api.dev.madhouselabs.net/getRecentTracks?username=dfaltium');
+              const { recenttracks: { track: [track] } } = await res.json()
+              let art = track.image.find(image => image.size === "large")["#text"];
+              let trackname = track.name;
+              let artist = track.artist["#text"];
+              let album = track.album["#text"];
+              let alttxt = `album art for ${album} by ${artist}`;
+              let tracklink = `https://www.last.fm/music/${artist}/_/${trackname}`.replace(/\?/g, '%3F').replace(/\+/g, '%252B').replace(/ /g,"+");
+              tracklink = escapeHTML(tracklink);
+              if (art == ""){
+                  art = `https://sisterkisser.org/missing.webp`;
+                  alttxt = `a light blue question mark centered on a dark blue background, as there is missing album art for this song`;
+              };
+              trackname = escapeHTML(trackname);
+              artist = escapeHTML(artist);
+              album = escapeHTML(album);
+              const container = document.getElementById("lastfm");
+              container.innerHTML = `
+              <div class="lastfm__box">
+                  <a href="${tracklink}" target="_blank" class="lastfm__link"><img src="${art}" class="lastfm__art" alt="${alttxt}" title="${alttxt}"/></a>
+                  <div class="lastfm__info">
+                      <h2 class="lastfm__track ub wht lastfm__ellipse" title="${trackname}">${trackname}</h2>
+                      <p class="lastfm__artist ub lastfm__ellipse" title="${artist}">${artist}</p>
+                      <p class="lastfm__album ub lastfm__ellipse" title="${album}">${album ? `on ${album}` : ""}</p>
+                  </div>
+              </div>
+              `;
+              console.log(art, trackname, artist, album);
+          }
+          catch (error) {
+              console.error("error getting last.fm info: ", error);
+          }
+      }
+  </script>
+  <script>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    let imgnm=getRandomInt(10);
+    if (imgnm == 9) {
+      document.getElementById("rndimg").innerHTML="<img data-tilt data-tilt-perspective='25' data-tilt-scale='3' width='150' src='./assets/pjsk/"+imgnm+".webp' style='margin-top:16px;margin-bottom:16px;' title='Reconsider'/>"
+    } else {
+      document.getElementById("rndimg").innerHTML="<img width='150' src='./assets/pjsk/"+imgnm+".webp'/>"
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+  <script src="assets/tilt.jquery.min.js"></script>
+  </body>
+</html>
