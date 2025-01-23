@@ -105,7 +105,7 @@
       }
       async function lastfm() {
           try{
-              const res = await fetch('https://lastfm-api.dev.madhouselabs.net/getRecentTracks?username=dfaltium');
+              const res = await fetch('https://lfm.snep.lol/getRecentTracks?username=dfaltium');
               const { recenttracks: { track: [track] } } = await res.json()
               let art = track.image.find(image => image.size === "large")["#text"];
               let trackname = track.name;
