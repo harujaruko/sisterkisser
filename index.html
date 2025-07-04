@@ -18,6 +18,7 @@
         <h3>COMPUTER GANGSTER GOD</h3>
         <img src="assets/tumblr_c43f9b460fd20ff2bb36910d344e11dc_ebb0338e_250.webp" alt="">
         <br><img src="assets/queercodedstamp.webp" alt="">
+        <br><img src="assets/t4t.gif" alt="">
       </div>
       <hr>
       <div class="socialsContainer">
@@ -35,19 +36,7 @@
           <i class="fab fa-lastfm"></i> dfaltium
         </a>
 
-        <!-- lastfm box, add buttons above me :D -->
-        <div id="lastfm">
-          <!-- dummy html that'll be replaced, just makes the loading of it less jarring -->
-          <div class="lastfm__box">
-              <img src="./assets/missing.webp" class="lastfm__art" alt="a light blue question mark centered on a dark blue background" title="a light blue question mark centered on a dark blue background"/>
-              <div class="lastfm__info">
-                  <h2 class="lastfm__track ub wht">...</h2>
-                  <p class="lastfm__artist ub">...</p>
-                  <p class="lastfm__album ub">...</p>
-              </div>
-          </div>
-        </div>
-        <!-- end of lastfm box, add more stuff below me :D -->
+
         <p class="fontSize1 txcenter">discord: harujaruko<br>
           soulseek: harujaruko
         </p>
@@ -61,6 +50,8 @@
           <img src="assets/remiliapowerstamp.webp" alt="">
           <img src="assets/flandrestamp.webp" alt="">
           <img src="assets/chenstamp.webp" alt="">
+          <img src="assets/def.gif" alt="">
+          <img src="assets/nophones.gif" alt="">
           <a href="https://getpaint.net/" target="_blank">
             <img src="assets/paintnet.gif" alt="">
             </a>
@@ -105,7 +96,7 @@
       }
       async function lastfm() {
           try{
-              const res = await fetch('https://lfm.snep.lol/getRecentTracks?username=dfaltium');
+              const res = await fetch('https://lastfm-api.dev.madhouselabs.net/getRecentTracks?username=dfaltium');
               const { recenttracks: { track: [track] } } = await res.json()
               let art = track.image.find(image => image.size === "large")["#text"];
               let trackname = track.name;
