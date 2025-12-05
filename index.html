@@ -14,8 +14,8 @@
     <div class="container">  
       <div class="txcenter">
         <div id="rndimg"></div>
-        <h1>HARUJARUKO WEBSITE</h1>
-        <h3>COMPUTER GANGSTER GOD</h3>
+        <h1>SisterKisser.org</h1>
+        <h3>-Jasmine E. Glory Esq.</h3>
         <img src="assets/tumblr_c43f9b460fd20ff2bb36910d344e11dc_ebb0338e_250.webp" alt="">
         <br><img src="assets/queercodedstamp.webp" alt="">
         <br><img src="assets/t4t.gif" alt="">
@@ -82,54 +82,7 @@
       </div>
     </div>
     <!-- scripts -->
-    <script>
-      function escapeHTML(string) {
-          return String(string).replace(/[&<>"']/g, function (s) {
-              return {
-                  '&': '&amp;',
-                  '<': '&lt;',
-                  '>': '&gt;',
-                  '"': '&quot;',
-                  "'": '&#39;'
-              }[s];
-          });
-      }
-      async function lastfm() {
-          try{
-              const res = await fetch('https://lastfm-api.dev.madhouselabs.net/getRecentTracks?username=dfaltium');
-              const { recenttracks: { track: [track] } } = await res.json()
-              let art = track.image.find(image => image.size === "large")["#text"];
-              let trackname = track.name;
-              let artist = track.artist["#text"];
-              let album = track.album["#text"];
-              let alttxt = `album art for ${album} by ${artist}`;
-              let tracklink = `https://www.last.fm/music/${artist}/_/${trackname}`.replace(/\?/g, '%3F').replace(/\+/g, '%252B').replace(/ /g,"+");
-              tracklink = escapeHTML(tracklink);
-              if (art == ""){
-                  art = `https://sisterkisser.org/missing.webp`;
-                  alttxt = `a light blue question mark centered on a dark blue background, as there is missing album art for this song`;
-              };
-              trackname = escapeHTML(trackname);
-              artist = escapeHTML(artist);
-              album = escapeHTML(album);
-              const container = document.getElementById("lastfm");
-              container.innerHTML = `
-              <div class="lastfm__box">
-                  <a href="${tracklink}" target="_blank" class="lastfm__link"><img src="${art}" class="lastfm__art" alt="${alttxt}" title="${alttxt}"/></a>
-                  <div class="lastfm__info">
-                      <h2 class="lastfm__track ub wht lastfm__ellipse" title="${trackname}">${trackname}</h2>
-                      <p class="lastfm__artist ub lastfm__ellipse" title="${artist}">${artist}</p>
-                      <p class="lastfm__album ub lastfm__ellipse" title="${album}">${album ? `on ${album}` : ""}</p>
-                  </div>
-              </div>
-              `;
-              console.log(art, trackname, artist, album);
-          }
-          catch (error) {
-              console.error("error getting last.fm info: ", error);
-          }
-      }
-  </script>
+    
   <script>
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);

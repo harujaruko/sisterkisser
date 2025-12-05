@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,600;1,600&display=swap');
+html {
+    overflow-y:hidden;
+    background-color: #fbffc4;
+}
+html:after,html:before{
+    content:"";
+    display:block;
+    bottom:0;
+    position:fixed;
+}
+html:after{
+    background-image: url('assets/gsright.webp');
+    right:0;
+    width:451px;
+    height:779px;
+    background-repeat:no-repeat;
+    z-index:-1
+}
+html:before{
+    background-image: url('assets/gsleft.webp');
+    left:0;
+    width:424px;
+    height:139px;
+    background-repeat:no-repeat;
+    z-index: -2;
+}
+html,body{width:100%;height:100%;padding:0;margin:0;}
+*{box-sizing:border-box;border:0;margin:0;font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;}
+.container{
+    background-color:rgba(89, 204, 18, 0.433);
+    padding:8px;
+    margin:8px auto 8px auto;
+    border-radius: 8px;
+    height:calc(100% - 16px);
+    width:fit-content;
+    min-width: 420px;
+    z-index:50;
+    overflow-y:auto;
+}
+hr{
+    border: 0;
+    border-top: 1px solid #31232d;
+    margin:4px 0 4px 0;
+}
+.buttonsContainer{text-align:center;max-width:400px;}
+.buttonsContainer a{text-decoration: none;}
+.socialButton {
+    width:calc(100% - 16px);
+    padding:8px;margin:8px;
+    border-radius:16px;
+    display:block;
+    text-align:center;
+}
+.lastfmBox{
+    background-color:#ad000c;
+}
+.robloxBox{
+    background-color: #262626;
+}
+.anilistBox{
+    background-color: #0b1521;
+}
+.steamBox{
+    background-color: #304b7a;
+    color: #ffffff;
+}
+.imgIcon{
+    height:24px;
+    width:auto;
+    transform: translateY(4px);
+}
+.socialsContainer a {
+    color:white;
+    text-decoration: none;
+    font-size: 24px;
+}
+.socialsContainer .lastfmBox .fab {transform:translateY(1px)}
+.cleft{float:left;}
+.cright{float:right;}
+.txcenter{text-align:center;}
+.fontSize1{
+    font-size:30px;
+    color:#0b1521;
+}
+
+/*
+last fm penis
+*/
+#lastfm {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    background-color:rgba(0, 0, 0, 0.458);
+    color:white;
+    border-radius:16px;
+    max-width:400px;
+}
+
+.lastfm__box {
+    display: flex;
+    width:100%;
+    padding: 16px;
+}
+
+.lastfm__art {
+    flex: 0 0 auto;
+    margin-right: 12px;
+    height: auto;
+    width: 100px;
+}
+
+.lastfm__info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.lastfm__track,
+.lastfm__artist,
+.lastfm__album {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: anywhere;
+}
+
+.lastfm__info p {
+    font-size: 12px;
+}
+
+.lastfm__info h2 {
+    font-size: 20px;
+}
+
+.lastfm__artist,
+.lastfm__album {
+    font-style: italic;
+    color: var(--pre);
+}
+
+.lastfm__link {
+    width: 100px;
+    height: 100px;
+    margin-right: 12px;
+}
+
+.lastfm__ellipse {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    white-space: break-spaces;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
