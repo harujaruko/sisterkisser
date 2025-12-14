@@ -9,11 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
   </head>
+
   
-  <body onload="lastfm();">
+  <body>
+    <div id="introanimbox">
+    <img id="introanim" src="assets/fragment.png"/>
+</div>
+    <div id="rndspritebox" ><img id='rndsprite'/></div>
+    <div id="rndspritebox2" ><img id='rndsprite2'/></div>
     <div class="container">  
       <div class="txcenter">
         <div id="rndimg"></div>
+        <button id="rerollbutton">Reroll</button>
         <h1>virtual sister kisser</h1>
         <h3>-Jasmine E. Glory Esq.</h3>
         <img src="assets/tumblr_c43f9b460fd20ff2bb36910d344e11dc_ebb0338e_250.webp" alt="">
@@ -83,17 +90,46 @@
     </div>
     <!-- scripts -->
     
-  <script>
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-    let imgnm=getRandomInt(20);
-    if (imgnm == 9,10) {
-      document.getElementById("rndimg").innerHTML="<img data-tilt data-tilt-perspective='25' data-tilt-scale='3' width='150' src='./assets/pjsk/"+imgnm+".webp' style='margin-top:16px;margin-bottom:16px;' title='Reconsider'/>"
+<script>
+const virtually = () => {
+    let rndimg = document.getElementById("rndimg"); // div
+    // roll virtually image with if condition
+    let random20 = Math.floor(Math.random() * 20);
+    if (random20 == 9 || random20 == 10) {
+        rndimg.innerHTML =
+        `<img data-tilt data-tilt-perspective='25' data-tilt-scale='3' width='250' src='./assets/pjsk/${random20}.webp' style='margin-top:16px;margin-bottom:16px;' title='Reconsider'/>`;
     } else {
-      document.getElementById("rndimg").innerHTML="<img width='150' src='./assets/pjsk/"+imgnm+".webp'/>"
+        rndimg.innerHTML =
+        `<img width='250' src='./assets/pjsk/${random20}.webp'/>`;
     }
-  </script>
+}
+
+const roll = () => {
+    const SPRITES = 836;
+    let rndsprite = document.getElementById("rndsprite");
+    let rndsprite2 = document.getElementById("rndsprite2"); // on the right
+
+
+    // roll random sprite 1
+    rndsprite.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.png`;
+    rndsprite2.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.png`;
+
+};
+
+document.getElementById("rerollbutton").onclick = function(){
+    roll();
+};
+
+virtually();
+roll(); // run on load
+setTimeout(() => {
+
+    document.getElementById("introanim").classList.add("disappear");
+    setTimeout(()=>{document.getElementById("introanim").style.display = "none";},600);
+
+}, 2000);
+
+</script>
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
   <script src="assets/tilt.jquery.min.js"></script>
   </body>
