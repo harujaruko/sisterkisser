@@ -62,7 +62,7 @@ hr{
 .buttonsContainer{text-align:center;max-width:400px;}
 .buttonsContainer a{text-decoration: none;}
 .socialButton {
-    font-size: 24px;
+    font-size: 30px;
     width:calc(100% - 16px);
     padding:8px;margin:8px;
     border-radius:16px;
@@ -90,14 +90,14 @@ hr{
 .socialsContainer a {
     color:rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 44px;
 }
 .socialsContainer .lastfmBox .fab {transform:translateY(1px)}
 .cleft{float:left;}
 .cright{float:right;}
 .txcenter{text-align:center;}
 .fontSize1{
-    font-size:30px;
+    font-size:40px;
     color: #ffffff;
 }
 

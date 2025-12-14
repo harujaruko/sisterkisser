@@ -87,8 +87,8 @@
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
     }
-    let imgnm=getRandomInt(10);
-    if (imgnm == 9) {
+    let imgnm=getRandomInt(20);
+    if (imgnm == 9,10) {
       document.getElementById("rndimg").innerHTML="<img data-tilt data-tilt-perspective='25' data-tilt-scale='3' width='150' src='./assets/pjsk/"+imgnm+".webp' style='margin-top:16px;margin-bottom:16px;' title='Reconsider'/>"
     } else {
       document.getElementById("rndimg").innerHTML="<img width='150' src='./assets/pjsk/"+imgnm+".webp'/>"
