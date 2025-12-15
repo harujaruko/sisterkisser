@@ -20,7 +20,7 @@
     <div class="container">  
       <div class="txcenter">
         <div id="rndimg"></div>
-        <button id="rerollbutton">Reroll</button>
+        <button id="rerollbutton">Create New Gameboard</button>
         <h1>virtual sister kisser</h1>
         <h3>-Jasmine E. Glory Esq.</h3>
         <img src="assets/tumblr_c43f9b460fd20ff2bb36910d344e11dc_ebb0338e_250.webp" alt="">
@@ -105,14 +105,14 @@ const virtually = () => {
 }
 
 const roll = () => {
-    const SPRITES = 836;
+    const SPRITES = 1259;
     let rndsprite = document.getElementById("rndsprite");
     let rndsprite2 = document.getElementById("rndsprite2"); // on the right
 
 
     // roll random sprite 1
-    rndsprite.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.png`;
-    rndsprite2.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.png`;
+    rndsprite.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.webp`;
+    rndsprite2.src = `./assets/sprites/${Math.floor(Math.random() * SPRITES)}.webp`;
 
 };
 
@@ -127,7 +127,7 @@ setTimeout(() => {
     document.getElementById("introanim").classList.add("disappear");
     setTimeout(()=>{document.getElementById("introanim").style.display = "none";},600);
 
-}, 2000);
+}, 800);
 
 </script>
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
